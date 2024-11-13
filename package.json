@@ -1,0 +1,33 @@
+{
+  "name": "bid-tour",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "start:dev": "env-cmd -f ./.env nodemon",
+    "build": "tsc -p ."
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.8.7",
+    "@types/node-schedule": "^2.1.7",
+    "env-cmd": "^10.1.0",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "casper-js-sdk": "^2.15.7",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "grammy": "^1.31.3",
+    "mongoose": "^8.8.0",
+    "morgan": "^1.10.0",
+    "node-schedule": "^2.1.1"
+  }
+}
