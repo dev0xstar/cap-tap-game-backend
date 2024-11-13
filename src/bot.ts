@@ -34,6 +34,7 @@ import { getBuilds } from "./controllers/Builds";
 import { updateReward } from "./controllers/Reward";
 import { claim } from "./controllers/Claim";
 import { exchange } from "./controllers/Exchange";
+import { Things } from "./models/Things";
 
 connectDb();
 const app = express();
@@ -68,6 +69,17 @@ app.post("/fullenergy", downFullEnergy as any);
 app.post("/publickey", setPubkey as any);
 app.post("/claim", claim as any);
 app.post("/exchange", exchange as any);
+app.post("/limit", async (req: Request, res: Response) => {
+  const { limit } = req.body;
+  const things = await Things.findOne();
+  if (things) {
+    things.limit = limit;
+    await things.save();
+  } else {
+    await Things.create({ limit });
+  }
+  res.send({ message: "Limit updated" });
+});
 
 const bot = new Bot(process.env.BOT_TOKEN || "");
 
