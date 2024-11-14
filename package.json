@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ./src/bot.js",
+    "start": "node ./dist/bot.js",
     "start:dev": "env-cmd -f ./.env nodemon",
-    "build": "tsc -p ."
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
